@@ -4,9 +4,44 @@ This is a starter repo for the Capstone project in the [Udacity C++ Nanodegree P
 
 <img src="snake_game.gif"/>
 
-The Capstone Project gives you a chance to integrate what you've learned throughout this program. This project will become an important part of your portfolio to share with current and future colleagues and employers.
+In this project, I have added [new features](#New Features) such as using A* search to enable the Snake to calculate paths and automatically move towards food. Additionally, I have optimized mechanisms by utilizing references, semantic moves, and selecting more  appropriate data structures to improve algorithm performance. Finally, I revised the program into a multithreaded version, whichseparated the program logic clearly, and implemented synchronization mechanisms to prevent race conditions. See [Rubric Points](#Rubric Points)
 
-In this project, you can build your own C++ application or extend this Snake game, following the principles you have learned throughout this Nanodegree Program. This project will demonstrate that you can independently create applications using a wide range of C++ features.
+## New Features
+* Pause
+  * Press `p` to pause or resume the game.
+* Record the Highest Score
+  * Display the highest score at the end of the game.
+* Auto Navigation
+  * Press `s` to switch between manual mode and auto navigation mode.
+  * The snake will search for the path using the A* Search algorithm and automatically change direction according to the path.
+  * The game will end if no feasible path can be found.
+
+## Rubric Points
+
+Searching for the keyword [FP.xx] int the project allows one to find the corresponding code.
+
+**1. Loops, Functions, I/O**
+* [FP.1a] The project demonstrates an understanding of C++ functions and control structures.
+* [FP.1b] The project reads data from a file and process the data, or the program writes data to a file.
+* [FP.1c]The project accepts user input and processes the input.
+
+**2. Object Oriented Programming**
+* [FP.2a] One or more classes are added to the project with appropriate access specifiers for class members.
+* [FP.2b] Class constructors utilize member initialization lists.
+* [FP.2c] Classes abstract implementation details from their interfaces.
+
+**3. Memory Management**
+* [FP.3a] The project makes use of references in function declarations.
+* [FP.3b] The project uses destructors appropriately.
+* [FP.3c] The project uses move semantics to move data instead of copying it, where possible.
+* [FP.3d] The project uses smart pointers instead of raw pointers.
+
+**4. Concurrency**
+* [FP.4a] The project uses multithreading.
+* [FP.4b] A mutex or lock is used in the project.
+
+**5. Optimalization**
+* [FP.5a] Using a different data structure to reduce time complexity
 
 ## Dependencies for Running Locally
 * cmake >= 3.7
@@ -29,18 +64,3 @@ In this project, you can build your own C++ application or extend this Snake gam
 2. Make a build directory in the top level directory: `mkdir build && cd build`
 3. Compile: `cmake .. && make`
 4. Run it: `./SnakeGame`.
-
-
-## CC Attribution-ShareAlike 4.0 International
-
-
-Shield: [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
-
-This work is licensed under a
-[Creative Commons Attribution-ShareAlike 4.0 International License][cc-by-sa].
-
-[![CC BY-SA 4.0][cc-by-sa-image]][cc-by-sa]
-
-[cc-by-sa]: http://creativecommons.org/licenses/by-sa/4.0/
-[cc-by-sa-image]: https://licensebuttons.net/l/by-sa/4.0/88x31.png
-[cc-by-sa-shield]: https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg

@@ -5,13 +5,14 @@
 
 void Controller::ChangeDirection(Snake &snake, Snake::Direction input,
                                  Snake::Direction opposite) const {
-  if (snake.direction != opposite || snake.size == 1) snake.direction = input;
+  if (snake.direction != opposite || snake.size == 1) 
+    snake.SetDirection(input);
   return;
 }
 
 void Controller::HandleInput(bool &running, Snake &snake) const {
   SDL_Event e;
-  while (SDL_PollEvent(&e)) {
+  while (running && SDL_PollEvent(&e)) {
     if (e.type == SDL_QUIT) {
       running = false;
     } else if (e.type == SDL_KEYDOWN) {
@@ -34,6 +35,13 @@ void Controller::HandleInput(bool &running, Snake &snake) const {
         case SDLK_RIGHT:
           ChangeDirection(snake, Snake::Direction::kRight,
                           Snake::Direction::kLeft);
+          break;
+
+        case SDLK_s:
+          snake.SetAuto(snake.IsAuto() ? false : true);
+          break;
+        case SDLK_p:
+          snake.pause = snake.pause ^ true;
           break;
       }
     }
